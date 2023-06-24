@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    ECR_REGISTRY = "946133734414.dkr.ecr.<region>.amazonaws.com"
+    ECR_REGISTRY = "946133734414.dkr.ecr.ap-south-1.amazonaws.com"
     ECR_REPOSITORY = "myrepo"
     IMAGE_TAG = "latest"
     EC2_INSTANCE = "65.2.151.51"
