@@ -5,7 +5,7 @@ pipeline {
     ECR_REGISTRY = "946133734414.dkr.ecr.ap-south-1.amazonaws.com"
     ECR_REPOSITORY = "myrepo"
     IMAGE_TAG = "latest"
-    EC2_INSTANCE = "65.2.151.51"
+    EC2_INSTANCE = "13.233.90.162"
     SSH_USER = "ubuntu"
     SSH_KEY = 'ec2forjenkins.pem'
   }
