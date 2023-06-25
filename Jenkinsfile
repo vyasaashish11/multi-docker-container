@@ -12,7 +12,7 @@ pipeline {
       steps {
         script {
           // Pull the latest image from ECR
-            docker pull \${ECR_REGISTRY}/\${ECR_REPOSITORY}:\${IMAGE_TAG}
+            docker pull ${ECR_REGISTRY} ${ECR_REPOSITORY}:${IMAGE_TAG}
             
             // Stop and remove the running container
             docker stop my-container || true
