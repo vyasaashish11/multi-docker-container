@@ -10,16 +10,15 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        // Connect to the EC2 instance via SSH
         script {
-            # Pull the latest image from ECR
+          // Pull the latest image from ECR
             docker pull \${ECR_REGISTRY}/\${ECR_REPOSITORY}:\${IMAGE_TAG}
             
-            # Stop and remove the running container
+            // Stop and remove the running container
             docker stop my-container || true
             docker rm my-container || true
 
-            # Run the new container from the updated image
+            // Run the new container from the updated image
             docker run -d --name my-container -p 8080:80 \${ECR_REGISTRY}/\${ECR_REPOSITORY}:\${IMAGE_TAG}
           """
         }
